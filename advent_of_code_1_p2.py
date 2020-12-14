@@ -1,28 +1,17 @@
-def second_number_increment(no2_index, expense_report):
-    index = no2_index
-    return expense_report[no2_index]
-
-
-def number_to_test(number, expense_report):
-    no2_index = 0
-
-    number_1 = number # original number to test
-
-    count = 0
-
-    for index in range(len(expense_report[0:-1])):
-        while count < len(expense_report):
-            number_2 = second_number_increment(no2_index, expense_report) # changes number 2 by one index
-            number_3 = expense_report[index + 2]
-
-            if number + number_2 + number_3 == 2020:
-                return number * number_2 * number_3
-            else:
-                count += 1
-                no2_index += 1
+#!/usr/bin/env python
+# advent_of_code.py
 
 def adds_up_to_2020(expense_report):
-    for number in expense_report:
-        result_number = number_to_test(number, expense_report)
-        if result_number != None:
-            return result_number
+    for x in expense_report:
+        for y in expense_report:
+            for z in expense_report:
+                if x + y + z == 2020:
+                    return x * y * z
+
+f = open('d1_input.txt', 'r') # will open d1_input.txt
+if f.mode == 'r': # checks the mode for the file
+    contents = f.read() # reads the content of the file
+    contents_list = contents.split()
+    expense_report = [int(i) for i in contents_list] # list comprehension to convert string to integer
+
+print(adds_up_to_2020(expense_report))

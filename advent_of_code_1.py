@@ -10,6 +10,14 @@ def adds_up_to_2020(expense_report):
         if result_number != None:
             return result_number
             
+def alternate(expense_report):
+    for x in expense_report:
+        for y in expense_report:
+            if x + y == 2020:
+                return x * y
+
+def alternate_2(expense_report):
+    [x * y for x in expense_report for y in expense_report if x + y == 2020]
 
 # expense_report = [
 #     1721,
