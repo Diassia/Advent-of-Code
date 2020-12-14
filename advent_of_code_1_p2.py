@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# advent_of_code.py
 
 def adds_up_to_2020(expense_report):
     for x in expense_report:
